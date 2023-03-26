@@ -15,7 +15,6 @@ class CreateProjectdesignTable extends Migration
     {
         Schema::create('projectdesign', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('document');
             $table->string('project_id');
             $table->timestamps();

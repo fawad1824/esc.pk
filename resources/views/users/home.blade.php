@@ -13,7 +13,7 @@
                 <div class="carousel-caption">
                     <p class="animated fadeInRight">We Are Professional</p>
                     <h1 class="animated fadeInLeft">For Your Dream Project</h1>
-                    <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Add
+                    <a class="btn animated fadeInUp" href="/home">Add
                         Contracts</a>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 <div class="carousel-caption">
                     <p class="animated fadeInRight">Professional Builder</p>
                     <h1 class="animated fadeInLeft">We Build Your Home</h1>
-                    <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Add
+                    <a class="btn animated fadeInUp" href="/home">Add
                         Contracts</a>
                 </div>
             </div>
@@ -33,7 +33,7 @@
                 <div class="carousel-caption">
                     <p class="animated fadeInRight">We Are Trusted</p>
                     <h1 class="animated fadeInLeft">For Your Dream Home</h1>
-                    <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Add
+                    <a class="btn animated fadeInUp" href="/home">Add
                         Contracts</a>
                 </div>
             </div>
@@ -294,77 +294,27 @@
         <div class="container">
             <div class="section-header text-center">
                 <p>Our Team</p>
-                <h2>Meet Our Engineer</h2>
+                <h2>Meet Our Contactot</h2>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="{{ asset('user/img/team-1.jpg') }}" alt="Team Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Adam Phillips</h2>
-                            <p>CEO & Founder</p>
-                        </div>
-                        <div class="team-social">
-                            <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="{{ asset('user/img/team-2.jpg') }}" alt="Team Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Dylan Adams</h2>
-                            <p>Civil Engineer</p>
-                        </div>
-                        <div class="team-social">
-                            <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                @foreach ($user as $item)
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="images/{{ $item->profile }}" alt="Team Image">
+                            </div>
+                            <div class="team-text">
+                                <h2>{{ $item->name }}</h2>
+                            </div>
+                            <div class="team-social">
+                                <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
+                                <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="{{ asset('user/img/team-3.jpg') }}" alt="Team Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Jhon Doe</h2>
-                            <p>Interior Designer</p>
-                        </div>
-                        <div class="team-social">
-                            <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="team-item">
-                        <div class="team-img">
-                            <img src="{{ asset('user/img/team-4.jpg') }}" alt="Team Image">
-                        </div>
-                        <div class="team-text">
-                            <h2>Josh Dunn</h2>
-                            <p>Painter</p>
-                        </div>
-                        <div class="team-social">
-                            <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="social-li" href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -374,74 +324,35 @@
     <div class="blog">
         <div class="container">
             <div class="section-header text-center">
-                <p>Latest Blog</p>
-                <h2>Latest From Our Blog</h2>
+                <p>Latest Projects</p>
+                <h2>Latest From Projects</h2>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{ asset('user/img/blog-1.jpg') }}" alt="Image">
-                        </div>
-                        <div class="blog-title">
-                            <h3>Lorem ipsum dolor sit</h3>
 
-                        </div>
-                        <div class="blog-meta">
-                            <p>By<a href="">Admin</a></p>
-                            <p>In<a href="">Construction</a></p>
-                        </div>
-                        <div class="blog-text">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis
-                                ornare velit non vulputate. Aliquam metus tortor
-                            </p>
+                @foreach ($userproject as $item)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="blog-item">
+                            <div class="blog-title">
+                                <h3>{{ $item->name }}</h3>
+                            </div>
+                            <div class="blog-meta">
+                                <p>By<a href="">{{ $item->userName }}</a></p>
+                                <p>In<a href="">Construction</a></p>
+                            </div>
+                            <div class="blog-text">
+                                <p>
+                                    {{ $item->desc }}
+                                </p>
+                            </div>
+                            <div class="blog-text">
+                                <a href="/single/{{ $item->id }}" class="btn btn-primary">View Project</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{ asset('user/img/blog-2.jpg') }}" alt="Image">
-                        </div>
-                        <div class="blog-title">
-                            <h3>Lorem ipsum dolor sit</h3>
+                @endforeach
 
-                        </div>
-                        <div class="blog-meta">
-                            <p>By<a href="">Admin</a></p>
-                            <p>In<a href="">Construction</a></p>
-                        </div>
-                        <div class="blog-text">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis
-                                ornare velit non vulputate. Aliquam metus tortor
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="{{ asset('user/img/blog-3.jpg') }}" alt="Image">
-                        </div>
-                        <div class="blog-title">
-                            <h3>Lorem ipsum dolor sit</h3>
-
-                        </div>
-                        <div class="blog-meta">
-                            <p>By<a href="">Admin</a></p>
-                            <p>In<a href="">Construction</a></p>
-                        </div>
-                        <div class="blog-text">
-                            <p>
-                                Lorem ipsum dolor sit amet elit. Phasellus nec pretium mi. Curabitur facilisis
-                                ornare velit non vulputate. Aliquam metus tortor
-                            </p>
-                        </div>
-                    </div>
-                </div>
             </div>
+            {{ $userproject->links('pagination::bootstrap-4') }}
         </div>
     </div>
     <!-- Blog End -->

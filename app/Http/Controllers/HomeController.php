@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProjectsBiddig;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -24,6 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         $title = "Dashboard";
-        return view('home', compact('title'));
+        $projects = ProjectsBiddig::with('project','user')->get();
+
+        return view('home', compact('title','projects'));
     }
 }

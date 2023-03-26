@@ -6,7 +6,7 @@
                         <div class="logo">
                             <a href="/">
                                 <h1>ESC.pk</h1>
-                                <!-- <img src="img/logo.jpg" alt="Logo"> -->
+                                {{-- <img src="img/logo.jpg" alt="Logo"> --}}
                             </a>
                         </div>
                     </div>
@@ -30,7 +30,7 @@
                                     </div>
                                     <div class="top-bar-text">
                                         <h3>Call Us</h3>
-                                        <p>+012 345 6789</p>
+                                        <p>(091) 5860291</p>
                                     </div>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="top-bar-text">
                                         <h3>Email Us</h3>
-                                        <p>info@example.com</p>
+                                        <p>info@cecos.edu.pk</p>
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             @endguest
                         </div>
                         <div class="ml-auto">
-                            <a class="btn" href="#">Add Contract</a>
+                            <a class="btn" href="/home">Add Contract</a>
                         </div>
                     </div>
                 </nav>

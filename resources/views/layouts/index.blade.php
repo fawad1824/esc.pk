@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Builderz - Construction Company Website Template</title>
+    <title>ESC.PK</title>
     @include('users.inc.styles')
 </head>
 
