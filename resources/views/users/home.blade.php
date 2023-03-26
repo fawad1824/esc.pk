@@ -13,8 +13,8 @@
                 <div class="carousel-caption">
                     <p class="animated fadeInRight">We Are Professional</p>
                     <h1 class="animated fadeInLeft">For Your Dream Project</h1>
-                    <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Get
-                        A Quote</a>
+                    <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Add
+                        Contracts</a>
                 </div>
             </div>
 
@@ -23,8 +23,8 @@
                 <div class="carousel-caption">
                     <p class="animated fadeInRight">Professional Builder</p>
                     <h1 class="animated fadeInLeft">We Build Your Home</h1>
-                    <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Get
-                        A Quote</a>
+                    <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Add
+                        Contracts</a>
                 </div>
             </div>
 
@@ -33,8 +33,8 @@
                 <div class="carousel-caption">
                     <p class="animated fadeInRight">We Are Trusted</p>
                     <h1 class="animated fadeInLeft">For Your Dream Home</h1>
-                    <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Get
-                        A Quote</a>
+                    <a class="btn animated fadeInUp" href="https://htmlcodex.com/construction-company-website-template">Add
+                        Contracts</a>
                 </div>
             </div>
         </div>
@@ -108,15 +108,10 @@
                     </div>
                     <div class="about-text">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi.
-                            Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida
-                            condimentum, viverra quis sem.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium mi.
-                            Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor id gravida
-                            condimentum, viverra quis sem. Curabitur non nisl nec nisi scelerisque maximus. Aenean
-                            consectetur convallis porttitor. Aliquam interdum at lacus non blandit.
+                            we are a civil Engineering based e-platform that allows
+                            contractors and clients find the best projects and soultions
+                            account to theirspecified needs and making a much more competitive
+                            enviornment in civil engineering industry
                         </p>
                         <a class="btn" href="">Learn More</a>
                     </div>
@@ -138,7 +133,7 @@
                             </div>
                             <div class="fact-text">
                                 <h2 data-toggle="counter-up">109</h2>
-                                <p>Expert Workers</p>
+                                <p>Expert Engineers</p>
                             </div>
                         </div>
                         <div class="col-6">

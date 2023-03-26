@@ -4,7 +4,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-4 col-md-12">
                         <div class="logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <h1>ESC.pk</h1>
                                 <!-- <img src="img/logo.jpg" alt="Logo"> -->
                             </a>
@@ -90,7 +90,7 @@
                             @endguest
                         </div>
                         <div class="ml-auto">
-                            <a class="btn" href="#">Get A Quote</a>
+                            <a class="btn" href="#">Add Contract</a>
                         </div>
                     </div>
                 </nav>

@@ -1,4 +1,3 @@
-
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 
     <a href="index3.html" class="brand-link">
@@ -64,11 +63,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();"
+                        class="nav-link">
                         <i class="nav-icon fas fa-power-off"></i>
-                        <p href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
+                        <p>
                             Logout
                         </p>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
