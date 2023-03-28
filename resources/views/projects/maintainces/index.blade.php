@@ -42,8 +42,7 @@
                                     <tbody>
 
                                         @foreach ($projects as $index => $item)
-                                        @if ($item->userID == Auth::user()->id || Auth::user()->role != '0')
-
+                                        @if ($item->userID == Auth::user()->id || Auth::user()->role == '1')
                                             <tr>
                                                 <td>{{ $index + 1 }}</td>
                                                 <td>{{ $item->name }}</td>

@@ -10,7 +10,7 @@
                             {{ $title }}
                         </div>
                         <div class="col-lg-4">
-                            <a style="float: right"; href="/commerical-create" class="btn btn-primary btn-sm">Add new</a>
+                            <a style="float: right"; href="/Retrofitting-create" class="btn btn-primary btn-sm">Add new</a>
                         </div>
                     </div>
 
@@ -42,7 +42,7 @@
                                     <tbody>
 
                                         @foreach ($projects as $index => $item)
-                                        @if ($item->userID == Auth::user()->id || Auth::user()->role != '0')
+                                        @if ($item->userID == Auth::user()->id || Auth::user()->role == '1')
 
                                             <tr>
                                                 <td>{{ $index + 1 }}</td>
