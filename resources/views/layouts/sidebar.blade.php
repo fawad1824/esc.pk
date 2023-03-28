@@ -10,7 +10,7 @@
 
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="images/{{ Auth::user()->profile }}" class="img-circle elevation-2" alt="User Image">
+                <img src="/images/{{ Auth::user()->profile }}" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="/home" class="d-block">{{ Auth::user()->name }}</a>
@@ -47,7 +47,18 @@
                 </li> --}}
 
                 {{-- R AND C --}}
-                @if (Auth::user()->role == 2)
+
+                @if (Auth::user()->role == 2 || Auth::user()->is_admin == 1)
+                    @if (Auth::user()->is_admin == 1)
+                        <li class="nav-item">
+                            <a href="/servicess" class="nav-link">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Services
+                                </p>
+                            </a>
+                        </li>
+                    @endif
                     <li class="nav-item">
                         <a href="#" class="nav-link ">
                             <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -100,7 +111,7 @@
                     </li>
                 @endif
 
-                @if (Auth::user()->role == 2 || Auth::user()->is_admin != 1)
+                @if (Auth::user()->is_admin != 0)
                     <li class="nav-item">
                         <a href="/project-bidding" class="nav-link">
                             <i class="nav-icon fas fa-cog"></i>
@@ -110,16 +121,16 @@
                         </a>
                     </li>
                 @endif
-              @if (Auth::user()->role == 2 || Auth::user()->is_admin != 1)
-                <li class="nav-item">
-                    <a href="/my-project-bidding" class="nav-link">
-                        <i class="nav-icon fas fa-cog"></i>
-                        <p>
-                           My Project Biding
-                        </p>
-                    </a>
-                </li>
-            @endif
+                @if (Auth::user()->role == 2 || Auth::user()->is_admin != 1)
+                    <li class="nav-item">
+                        <a href="/my-project-bidding" class="nav-link">
+                            <i class="nav-icon fas fa-cog"></i>
+                            <p>
+                                My Project Biding
+                            </p>
+                        </a>
+                    </li>
+                @endif
 
                 <li class="nav-item">
                     <a href="/profile" class="nav-link">

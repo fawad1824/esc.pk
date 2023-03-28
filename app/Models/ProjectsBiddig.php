@@ -13,14 +13,16 @@ class ProjectsBiddig extends Model
         'price',
         'desc',
         'project_id',
-        'user_id'
+        'user_id',
+        'userproject_id',
+        'stauts'
     ];
     public function project()
     {
-        return $this->hasOne(Projects::class,'id','project_id');
+        return $this->hasOne(Projects::class, 'id', 'project_id');
     }
     public function user()
     {
-        return $this->hasOne(User::class,'id','user_id');
+        return $this->hasOne(User::class, 'id', 'user_id');
     }
 }

@@ -19,6 +19,8 @@ class CreateProjectbiddingTable extends Migration
             $table->string('user_id');
             $table->string('price');
             $table->string('desc');
+            $table->string('userproject_id');
+            $table->string('status');
             $table->timestamps();
         });
     }

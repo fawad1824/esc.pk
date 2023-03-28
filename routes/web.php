@@ -5,6 +5,7 @@ use App\Http\Controllers\ProjectsDashboard;
 use App\Http\Controllers\WebsitController;
 use App\Models\Projects;
 use App\Models\ProjectsBiddig;
+use App\Models\Services;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -14,7 +15,8 @@ use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 Route::get('/', function () {
     $user = User::where('role', '2')->get();
     $userproject = Projects::paginate(6);
-    return view('users.home', compact('user', 'userproject'));
+    $service=Services::paginate(6);
+    return view('users.home', compact('user', 'userproject','service'));
 });
 Route::get('/about', function () {
     $title = "About us";
@@ -86,3 +88,15 @@ Route::get('/my-project-bidding', [ProjectsDashboard::class, 'myprojectbidding']
 Route::get('/project-bidding', [ProjectsDashboard::class, 'projectbidding']);
 Route::get('/profile', [ProjectsDashboard::class, 'profile']);
 Route::post('/profileadd', [ProjectsDashboard::class, 'profileadd']);
+Route::post('/serviceadd', [ProjectsDashboard::class, 'Serviceadd']);
+
+Route::get('/projectBiddAdd/{id}/{status}', [ProjectsDashboard::class, 'projectBiddAdd']);
+Route::get('/deletebiding/{id}', [ProjectsDashboard::class, 'deletebiding']);
+
+//
+
+Route::get('/servicess', [ProjectsDashboard::class, 'servicess']);
+Route::get('/servicesscreate', [ProjectsDashboard::class, 'servicesscreate']);
+Route::get('/servicessdelete/{id}', [ProjectsDashboard::class, 'servicessdelete']);
+Route::get('/servicessedit/{id}', [ProjectsDashboard::class, 'servicessedit']);
+Route::post('/servicessupdate', [ProjectsDashboard::class, 'servicessupdate']);

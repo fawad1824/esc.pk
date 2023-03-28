@@ -113,7 +113,7 @@
                             account to theirspecified needs and making a much more competitive
                             enviornment in civil engineering industry
                         </p>
-                        <a class="btn" href="">Learn More</a>
+                        {{-- <a class="btn" href="">Learn More</a> --}}
                     </div>
                 </div>
             </div>
@@ -182,108 +182,24 @@
                 <h2>We Provide Services</h2>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{ asset('user/img/service-1.jpg') }}" alt="Image">
-                            <div class="service-overlay">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium
-                                    mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor
-                                    id gravida condimentum, viverra quis sem.
-                                </p>
+                @foreach ($service as $item)
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="/images/{{ $item->image }}" alt="Image">
+                                <div class="service-overlay">
+                                    <p>
+                                        {{ $item->desc }}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="service-text">
+                                <h3>{{ $item->name }}</h3>
                             </div>
                         </div>
-                        <div class="service-text">
-                            <h3>Building Construction</h3>
-                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{ asset('user/img/service-2.jpg') }}" alt="Image">
-                            <div class="service-overlay">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium
-                                    mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor
-                                    id gravida condimentum, viverra quis sem.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="service-text">
-                            <h3>House Renovation</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{ asset('user/img/service-3.jpg') }}" alt="Image">
-                            <div class="service-overlay">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium
-                                    mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor
-                                    id gravida condimentum, viverra quis sem.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="service-text">
-                            <h3>Architecture Design</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{ asset('user/img/service-4.jpg') }}" alt="Image">
-                            <div class="service-overlay">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium
-                                    mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor
-                                    id gravida condimentum, viverra quis sem.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="service-text">
-                            <h3>Interior Design</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{ asset('user/img/service-5.jpg') }}" alt="Image">
-                            <div class="service-overlay">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium
-                                    mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor
-                                    id gravida condimentum, viverra quis sem.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="service-text">
-                            <h3>Fixing & Support</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-                    <div class="service-item">
-                        <div class="service-img">
-                            <img src="{{ asset('user/img/service-6.jpg') }}" alt="Image">
-                            <div class="service-overlay">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec pretium
-                                    mi. Curabitur facilisis ornare velit non vulputate. Aliquam metus tortor, auctor
-                                    id gravida condimentum, viverra quis sem.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="service-text">
-                            <h3>Painting</h3>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -315,6 +231,7 @@
                         </div>
                     </div>
                 @endforeach
+                {{ $userproject->links('pagination::bootstrap-4') }}
             </div>
         </div>
     </div>

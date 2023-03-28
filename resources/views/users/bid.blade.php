@@ -92,13 +92,13 @@
                                         @csrf
                                         <div class="form-group">
                                             <label for="">Price</label>
-                                            <input type="number" name="price" class="form-control">
+                                            <input type="number" required name="price" class="form-control">
                                             <input type="text" hidden name="project_id" value="{{ $project->id }}"
                                                 class="form-control">
                                         </div>
                                         <div class="form-group">
                                             <label for="">Description</label>
-                                            <textarea name="desc" id="" class="form-control" cols="30" rows="10"></textarea>
+                                            <textarea name="desc" required id="" class="form-control" cols="30" rows="10"></textarea>
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-primary">Save</button>

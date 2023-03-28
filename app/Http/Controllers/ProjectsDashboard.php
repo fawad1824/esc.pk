@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Projects;
 use App\Models\ProjectsBiddig;
 use App\Models\ProjectsDesign;
+use App\Models\Services;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -176,7 +177,7 @@ class ProjectsDashboard extends Controller
     }
     public function myprojectbidding()
     {
-        $projects = ProjectsBiddig::with('project', 'user')->get();
+        $projects = ProjectsBiddig::with('project', 'user')->where('user_id', Auth::user()->id)->get();
         $title = "My Bidding Projects";
         return view('projects.bid.myindex', compact('title', 'projects'));
     }
@@ -202,5 +203,76 @@ class ProjectsDashboard extends Controller
         }
         $user->save();
         return redirect()->back()->with("message", "Profile Updated successfully");
+    }
+    public function servicesscreate()
+    {
+        $title = "Services Added";
+        return view('projects.services', compact('title'));
+    }
+    public function servicess()
+    {
+        $title = "Services";
+        $service = Services::all();
+        return view('projects.index', compact('title', 'service'));
+    }
+
+    public function Serviceadd(Request $request)
+    {
+        $user = new Services();
+        $user->name = $request->name;
+        $user->desc = $request->des;
+
+        if ($request->hasFile('prodile')) {
+            $file = $request->file('prodile');
+            $extension = $file->getClientOriginalExtension();
+            $filename = time() . '.' . $extension;
+            $file->move('images/', $filename);
+            $user->image = $filename;
+        }
+        $user->save();
+        return redirect()->back()->with("message", "Services Added successfully");
+    }
+    public function servicessdelete($id)
+    {
+        Services::where('id', $id)->delete();
+        return redirect()->back()->with("message", "Services Delete successfully");
+    }
+
+    public function servicessedit(Request $request, $id)
+    {
+        $title = "Services Updated";
+        $user = Services::where('id', $request->id)->first();
+        return view('projects.udoaa', compact('title', 'user'));
+    }
+    public function servicessupdate(Request $request)
+    {
+        $user = Services::where('id', $request->id)->first();
+        $user->name = $request->name;
+        $user->desc = $request->des;
+
+        if (isset($request->prodile)) {
+            if ($request->hasFile('prodile')) {
+                $file = $request->file('prodile');
+                $extension = $file->getClientOriginalExtension();
+                $filename = time() . '.' . $extension;
+                $file->move('images/', $filename);
+                $user->image = $filename;
+            }
+        }
+
+        $user->save();
+        return redirect()->back()->with("message", "Services Updated successfully");
+    }
+    public function projectBiddAdd($id, $status)
+    {
+        $pr = ProjectsBiddig::where('id', $id)->first();
+        $pr->status = $status;
+        $pr->save();
+        return redirect()->back()->with("message", "Bid update successfully");
+    }
+    public function deletebiding($id)
+    {
+        ProjectsBiddig::where('id', $id)->delete();
+        return redirect()->back()->with("message", "Deleted successfully");
     }
 }

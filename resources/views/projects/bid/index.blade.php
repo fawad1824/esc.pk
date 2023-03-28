@@ -42,7 +42,7 @@
                                     <tbody>
 
                                         @foreach ($projects as $index => $item)
-                                            @if ($item->user_id == Auth::user()->id || (Auth::user()->is_admin != '0'))
+                                            @if ($item->user_id == Auth::user()->id || Auth::user()->is_admin != '0')
                                                 <tr>
                                                     <td>{{ $index + 1 }}</td>
                                                     <td>{{ $item->user->name }}</td>
@@ -50,13 +50,27 @@
                                                     <td>{{ $item->project->budget }}</td>
                                                     <td>{{ $item->price }}</td>
                                                     <td>{{ $item->desc }}</td>
-                                                    <td>{{ $item->status }}</td>
+                                                    @if ($item->stats == '1')
+                                                        <td>Pending</td>
+                                                    @else
+                                                        <td>Complete</td>
+                                                    @endif
                                                     <td>
                                                         <div class="d-flex m-1">
-                                                            <a class="btn btn-primary btn-sm  m-1"
-                                                                href="projectBidd/{{ $item->id }}">Bid Assign</a>
+                                                            @if ($item->status == '1')
+                                                                <a class="btn btn-primary btn-sm  m-1"
+                                                                    href="projectBiddAdd/{{ $item->id }}/2">Bid
+                                                                    Assign</a>
+                                                                <a class="btn btn-primary btn-sm  m-1"
+                                                                    href="projectBiddAdd/{{ $item->id }}/3">Reject
+                                                                    Bid</a>
+                                                            @elseif($item->status == '2')
+                                                                You Already Assign
+                                                            @elseif($item->status == '3')
+                                                                You Reject
+                                                            @endif
                                                             <a class="btn btn-danger btn-sm  m-1"
-                                                                href="deleteprojects/{{ $item->id }}"><i
+                                                                href="deletebiding/{{ $item->id }}"><i
                                                                     class="fa fa-trash-o" aria-hidden="true"></i></a>
                                                         </div>
                                                     </td>
