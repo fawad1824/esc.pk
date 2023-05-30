@@ -120,7 +120,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="">Cover Area</label>
+                                        <label for="">Covered Area</label>
                                         <input type="text" required class="form-control" name="area">
                                     </div>
                                 </div>

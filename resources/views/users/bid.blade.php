@@ -3,6 +3,26 @@
     @include('users.inc.pagestitle')
 
 
+    <style>
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+    </style>
     <!-- Team Start -->
     <div class="team">
         <div class="container">
@@ -76,13 +96,30 @@
                     <div class="row">
                         @if (Auth::check())
                             @php
-                                $projectbii = DB::table('projectbidding')->where('project_id', $project->id)
+                                $projectbii = DB::table('projectbidding')
+                                    ->where('project_id', $project->id)
                                     ->where('user_id', Auth::user()->id)
                                     ->first();
 
                             @endphp
                             @if ($projectbii)
                                 <h5 class="mt-4 mb-5 ml-3">Your Already Bid for this project</h5>
+                                @php
+                                    $phoneNumber = $project->phone; // Replace with your desired phone number
+                                    $message = 'Project ' . $project->name . ' ' . ' Project Location ' . $project->location . ' Type ' . $project->typeof; // Replace with your desired custom message
+
+                                    $encodedMessage = urlencode($message);
+                                    $whatsappLink = 'https://api.whatsapp.com/send?phone=' . $phoneNumber . '&text=' . $encodedMessage;
+                                @endphp
+
+
+                                <link rel="stylesheet"
+                                    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+                                <a href="{{ $whatsappLink }}" class="float" target="_blank"><i
+                                        class="fa fa-whatsapp my-float"></i></a>
+
+                                </a>
                             @else
                                 <div class="col-lg-12">
 
@@ -107,7 +144,12 @@
                                 </div>
                             @endif
                         @else
-                            <h5 class="mt-4 mb-5 ml-3">Please Login</h5>
+                            <div class="col-lg-12">
+                                <h5 class="mt-4 mb-1 ml-3">Please Login First</h5>
+                            </div>
+                            <div class="col-lg-12 ml-3">
+                                <a href="/login" class="btn btn-primary">Login</a>
+                            </div>
                         @endif
                     </div>
                 </div>

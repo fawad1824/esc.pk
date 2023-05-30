@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ESC.PK</title>
+    <title>ECS.PK</title>
     @include('users.inc.styles')
 </head>
 

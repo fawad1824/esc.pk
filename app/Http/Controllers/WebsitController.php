@@ -19,7 +19,7 @@ class WebsitController extends Controller
         $projecuser=Projects::where('id',$request->project_id)->first();
         $pro->user_id = Auth::user()->id;
         $pro->userproject_id = $projecuser->userID;
-        $pro->stauts = '1';
+        $pro->status = '1';
         $pro->save();
         return redirect()->back()->with("message", "Bid Add successfully");
     }

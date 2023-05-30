@@ -7,7 +7,7 @@
         <div class="container">
             <div class="section-header text-center">
                 <p>Our Team</p>
-                <h2>Meet Our Contactot</h2>
+                <h2>Meet Our Contractors</h2>
             </div>
             <div class="row">
                 @foreach ($user as $item)

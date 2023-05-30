@@ -128,7 +128,7 @@
 
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <label for="">Cover Area</label>
+                                        <label for="">covered Area</label>
                                         <input value="{{ $proj->area }}" type="text" required class="form-control"
                                             name="area">
                                     </div>

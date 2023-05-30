@@ -11,8 +11,11 @@
             <div class="carousel-item active">
                 <img src="{{ asset('user/img/carousel-1.jpg') }}" alt="Carousel Image">
                 <div class="carousel-caption">
-                    <p class="animated fadeInRight">We Are Professional</p>
-                    <h1 class="animated fadeInLeft">For Your Dream Project</h1>
+                    <p class="animated fadeInRight">THE FUTURE</p>
+                    <h1 style="font-size:30px;" class="animated fadeInLeft">"Build a stronger future with our game-changing
+                        e-tendering platform tailored for civil engineering projects."
+
+                    </h1>
                     <a class="btn animated fadeInUp" href="/home">Add
                         Contracts</a>
                 </div>
@@ -21,8 +24,11 @@
             <div class="carousel-item">
                 <img src="{{ asset('user/img/carousel-2.jpg') }}" alt="Carousel Image">
                 <div class="carousel-caption">
-                    <p class="animated fadeInRight">Professional Builder</p>
-                    <h1 class="animated fadeInLeft">We Build Your Home</h1>
+                    <p class="animated fadeInRight">UNLEASHING NEW POSSIBILITIES</p>
+                    <h1 style="font-size:30px;" class="animated fadeInLeft">"Unleash the potential of digital transformation
+                        in civil engineering procurement. Embrace efficiency, embrace progress."
+
+                    </h1>
                     <a class="btn animated fadeInUp" href="/home">Add
                         Contracts</a>
                 </div>
@@ -31,8 +37,9 @@
             <div class="carousel-item">
                 <img src="{{ asset('user/img/carousel-3.jpg') }}" alt="Carousel Image">
                 <div class="carousel-caption">
-                    <p class="animated fadeInRight">We Are Trusted</p>
-                    <h1 class="animated fadeInLeft">For Your Dream Home</h1>
+                    <p class="animated fadeInRight">OVERCOME</p>
+                    <h1 style="font-size:30px;" class="animated fadeInLeft">"Navigate the complexities of civil engineering
+                        procurement with ease on our cutting-edge e-tendering portal specifically for your industry"</h1>
                     <a class="btn animated fadeInUp" href="/home">Add
                         Contracts</a>
                 </div>
@@ -60,8 +67,10 @@
                             <i class="flaticon-worker"></i>
                         </div>
                         <div class="feature-text">
-                            <h3>Expert Worker</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit non</p>
+                            <h3>Expertise</h3>
+                            <p style="font-size: 14px;">Our e-tendering platform boasts an extensive network of qualified
+                                and experienced civil engineering contractors, ensuring access to a diverse pool of expert
+                                professionals .</p>
                         </div>
                     </div>
                 </div>
@@ -71,8 +80,9 @@
                             <i class="flaticon-building"></i>
                         </div>
                         <div class="feature-text">
-                            <h3>Quality Work</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit non</p>
+                            <h3>Quality </h3>
+                            <p style="font-size: 14px;">Your satisfaction is our priority. We are dedicated to facilitating
+                                successful collaborations between project owners and contractors.</p>
                         </div>
                     </div>
                 </div>
@@ -83,7 +93,8 @@
                         </div>
                         <div class="feature-text">
                             <h3>24/7 Support</h3>
-                            <p>Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit non</p>
+                            <p style="font-size: 14px;">Our live chat feature enables real-time communication with our
+                                support team, allowing you to get immediate assistance whenever you need it.</p>
                         </div>
                     </div>
                 </div>
@@ -103,15 +114,18 @@
                 </div>
                 <div class="col-lg-7 col-md-6">
                     <div class="section-header text-left">
-                        <p>Welcome to Builderz</p>
-                        <h2>25 Years Experience</h2>
+                        <p>Welcome</p>
+                        <h2>DAWN OF A NEW ERA</h2>
                     </div>
                     <div class="about-text">
                         <p>
-                            we are a civil Engineering based e-platform that allows
-                            contractors and clients find the best projects and soultions
-                            account to theirspecified needs and making a much more competitive
-                            enviornment in civil engineering industry
+                            At ECS , we are revolutionizing the way civil engineering projects are tendered and executed. As
+                            a leading e-tendering platform, we are dedicated to streamlining the procurement process,
+                            connecting project owners with the most qualified contractors, and fostering successful
+                            collaborations. With our user-friendly interface, advanced features, and commitment to quality,
+                            we empower our users to achieve remarkable results. Our mission is to provide a seamless and
+                            transparent platform that promotes efficiency, innovation, and excellence in civil engineering
+                            tendering. Join us today and experience the future of procurement in the construction industry.
                         </p>
                         {{-- <a class="btn" href="">Learn More</a> --}}
                     </div>
@@ -179,7 +193,7 @@
         <div class="container">
             <div class="section-header text-center">
                 <p>Our Services</p>
-                <h2>We Provide Services</h2>
+                <h2>We Provide Services in </h2>
             </div>
             <div class="row">
                 @foreach ($service as $item)
@@ -210,7 +224,7 @@
         <div class="container">
             <div class="section-header text-center">
                 <p>Our Team</p>
-                <h2>Meet Our Contactot</h2>
+                <h2>Meet Our Contractors</h2>
             </div>
             <div class="row">
                 @foreach ($user as $item)
@@ -231,8 +245,8 @@
                         </div>
                     </div>
                 @endforeach
-                {{ $userproject->links('pagination::bootstrap-4') }}
             </div>
+            {{ $userproject->links('pagination::bootstrap-4') }}
         </div>
     </div>
     <!-- Team End -->
