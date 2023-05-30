@@ -45,10 +45,18 @@
                                             @if ($item->user_id == Auth::user()->id || Auth::user()->is_admin != '0')
                                                 <tr>
                                                     <td>{{ $index + 1 }}</td>
-                                                    <td>{{ $item->user->name }}</td>
-                                                    <td>{{ $item->project->name }}</td>
-                                                    <td>{{ $item->project->budget }}</td>
-                                                    <td>{{ $item->price }}</td>
+                                                    @if (asset($item->user->name))
+                                                        <td>{{ $item->user->name }}</td>
+                                                    @endif
+                                                    @if (asset($item->project->name))
+                                                        <td>{{ $item->project->name }}</td>
+                                                    @endif
+                                                    @if (asset($item->project->budget))
+                                                        <td>{{ $item->project->budget }}</td>
+                                                    @endif
+                                                    @if (asset($item->price))
+                                                        <td>{{ $item->price }}</td>
+                                                    @endif
                                                     <td>{{ $item->desc }}</td>
                                                     @if ($item->stats == '1')
                                                         <td>Pending</td>
